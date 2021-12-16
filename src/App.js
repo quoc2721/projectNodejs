@@ -1,13 +1,9 @@
-import React from "react";
-import "./App.css";
-// import Login from "./components/login/login";
-import HomePages from "./components/homePage/homePage.js";
+import HomePage from "./Pages/homePage";
 
 function App() {
   return (
     <div>
-      <HomePages />
-      {/* <Login /> */}
+      <HomePage />
     </div>
   );
 }

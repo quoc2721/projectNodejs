@@ -7,6 +7,7 @@ import {
   Button,
 } from "react-bootstrap";
 import Stack from "react-bootstrap/Stack";
+import "bootstrap/dist/css/bootstrap.min.css";
 // import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./search.css";
 import { BiSearchAlt } from "react-icons/bi";
