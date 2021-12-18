@@ -72,6 +72,9 @@ export default function Review({ blog }) {
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
+          <Typography component="span" color="textSecondary">
+            {`${blog.likeTym} likes`}
+          </Typography>
         </IconButton>
         <IconButton aria-label="share">
           <ShareIcon />
