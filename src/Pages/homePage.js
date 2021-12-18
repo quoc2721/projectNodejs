@@ -20,19 +20,21 @@ export default function HomePage(props) {
   }, [dispatch]);
 
   return (
-    <Container maxWidth="lg">
+    <>
       <Header />
       <Search />
       <ViewList />
       <PostList />
-      <CreatePostModal />
-      <Fab
-        color="secondary"
-        className={classes.fab}
-        onClick={openCreatePostModal}
-      >
-        <AddIcon />
-      </Fab>
-    </Container>
+      <Container fixed>
+        <CreatePostModal />
+        <Fab
+          color="secondary"
+          className={classes.fab}
+          onClick={openCreatePostModal}
+        >
+          <AddIcon />
+        </Fab>
+      </Container>
+    </>
   );
 }
