@@ -6,9 +6,7 @@ import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 import reducers from "./redux/reducers";
 import mySaga from "./redux/sagas";
-import { Router, Route } from "react-router-dom";
-import Login from "./Login/login";
-import HomePage from "./Pages/homePage";
+import App from "./App";
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(reducers, applyMiddleware(sagaMiddleware));
@@ -17,7 +15,7 @@ sagaMiddleware.run(mySaga);
 
 ReactDOM.render(
   <Provider store={store}>
-    <HomePage />
+    <App />
   </Provider>,
   document.getElementById("root")
 );

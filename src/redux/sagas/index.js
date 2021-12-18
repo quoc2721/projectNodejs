@@ -32,10 +32,20 @@ function* updatePostSaga(action) {
   }
 }
 
+// các Saga của Blogs
+function* fetchBlogsSaga(action) {
+  const blogs = yield call(api.fetchBlogs);
+  console.log("[blogs]", blogs);
+  yield put(actions.getBlogs.getBlogsSuccess(blogs.data));
+}
+
 function* mySaga() {
   yield takeLatest(actions.getPosts.getPostsRequest, fetchPostsSaga);
   yield takeLatest(actions.createPost.createPostRequest, createPostSaga);
   yield takeLatest(actions.updatePost.updatePostRequest, updatePostSaga);
+
+  // yield của bài review company
+  yield takeLatest(actions.getBlogs.getBlogsRequest, fetchBlogsSaga);
 }
 
 // generator function ES6

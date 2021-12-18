@@ -6,4 +6,8 @@ export const INIT_STATE = {
   modal: {
     isShow: false,
   },
+  blogs: {
+    isLoading: false,
+    data: [],
+  },
 };
