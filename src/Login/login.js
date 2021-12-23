@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Typography, TextField, Button } from "@mui/material";
+<<<<<<< HEAD
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import  axios from "axios"
 
@@ -78,6 +79,10 @@ export default function Login() {
     setShowlogoutButton(false);
   };
 
+=======
+
+export default function Login() {
+>>>>>>> cb26f3579771dc7cb27c03436daf4383b0481836
   return (
     <Container
       sx={{
@@ -126,6 +131,7 @@ export default function Login() {
       >
         Đăng nhập
       </Button>
+<<<<<<< HEAD
       {showloginButton ? (
         <GoogleLogin
           clientId={clientId}
@@ -146,6 +152,8 @@ export default function Login() {
           theme='dark'
         ></GoogleLogout>
       ) : null}
+=======
+>>>>>>> cb26f3579771dc7cb27c03436daf4383b0481836
     </Container>
   );
 }
