@@ -13,6 +13,8 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 
+
+
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -63,6 +65,12 @@ const commonStyles = {
 
 export default function MenuAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [state, setState] = React.useState(['Login','Log out']);
+
+  React.useEffect(() => {
+      if(localStorage.getItem('user') != null)
+      setState(['My account','Log out'])
+  },[])
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -72,6 +80,18 @@ export default function MenuAppBar() {
     setAnchorEl(null);
   };
 
+ const logout = () => {
+   handleClose()
+   localStorage.removeItem('user');
+   setState(['Login','Log out'])
+ }
+
+ const login = () =>{
+  handleClose()
+    if(!localStorage.getItem('user')) {
+        window.location = "/login"
+    }
+ }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -126,8 +146,8 @@ export default function MenuAppBar() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Thông tin cá nhân</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={login}>{state[0]}</MenuItem>
+                <MenuItem onClick={logout}>{state[1]}</MenuItem>
               </Menu>
             </div>
           </Button>
